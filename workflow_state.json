@@ -1,0 +1,60 @@
+{
+  "app_name": "FinPulse",
+  "agents": [
+    {
+      "agent_id": "69ec557e5e51596669c0ed04",
+      "name": "Telegram Transaction Agent",
+      "type": "text",
+      "model": "claude-sonnet-4-6",
+      "provider": "anthropic",
+      "temperature": 0.3,
+      "tools": ["TELEGRAM_GET_UPDATES", "TELEGRAM_SEND_MESSAGE", "NOTION_INSERT_ROW_DATABASE", "NOTION_QUERY_DATABASE", "NOTION_UPDATE_ROW_DATABASE"],
+      "response_schema_file": "response_schemas/telegram_transaction_agent_response.json"
+    },
+    {
+      "agent_id": "69ec557ff83595833f6326ff",
+      "name": "CSV Ingest Agent",
+      "type": "text",
+      "model": "claude-sonnet-4-6",
+      "provider": "anthropic",
+      "temperature": 0.2,
+      "tools": ["NOTION_INSERT_ROW_DATABASE", "NOTION_QUERY_DATABASE"],
+      "response_schema_file": "response_schemas/csv_ingest_agent_response.json"
+    },
+    {
+      "agent_id": "69ec55805e51596669c0ed08",
+      "name": "Enrichment & Dedup Agent",
+      "type": "text",
+      "model": "claude-sonnet-4-6",
+      "provider": "anthropic",
+      "temperature": 0.2,
+      "tools": ["NOTION_QUERY_DATABASE", "NOTION_UPDATE_ROW_DATABASE"],
+      "response_schema_file": "response_schemas/enrichment_dedup_agent_response.json"
+    },
+    {
+      "agent_id": "69ec5581eac603bbd2d82ebc",
+      "name": "Financial Health Agent",
+      "type": "text",
+      "model": "claude-sonnet-4-6",
+      "provider": "anthropic",
+      "temperature": 0.3,
+      "tools": ["NOTION_QUERY_DATABASE"],
+      "response_schema_file": "response_schemas/financial_health_agent_response.json"
+    },
+    {
+      "agent_id": "69ec5581dcdea9592ddcd90f",
+      "name": "Finance Query Agent",
+      "type": "text",
+      "model": "claude-sonnet-4-6",
+      "provider": "anthropic",
+      "temperature": 0.3,
+      "tools": ["TELEGRAM_GET_UPDATES", "TELEGRAM_SEND_MESSAGE", "NOTION_QUERY_DATABASE"],
+      "response_schema_file": "response_schemas/finance_query_agent_response.json"
+    }
+  ],
+  "workflow": {
+    "nodes": 9,
+    "edges": 9,
+    "pattern": "independent_parallel_with_convergence"
+  }
+}

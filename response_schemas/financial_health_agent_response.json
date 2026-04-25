@@ -1,0 +1,102 @@
+{
+  "agent_name": "Financial Health Agent",
+  "agent_id": "69ec5581eac603bbd2d82ebc",
+  "description": "Computes: net worth, savings rate, debt-to-income, credit utilisation per card and aggregate (with health thresholds), liability breakdown with repayment progress, investment performance (current value vs cost basis per holding), spending categories. Returns structured report.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "net_worth": {
+      "total": "number",
+      "investments": "number",
+      "assets": "number",
+      "liabilities": "number",
+      "composition": [
+        {
+          "category": "string",
+          "value": "number",
+          "percentage": "number"
+        }
+      ]
+    },
+    "investment_performance": [
+      {
+        "display_name": "string",
+        "identifier": "string",
+        "type": "string",
+        "units": "number",
+        "cost_basis": "number",
+        "current_value": "number",
+        "gain_loss_percent": "number"
+      }
+    ],
+    "liability_breakdown": [
+      {
+        "name": "string",
+        "type": "string",
+        "original_amount": "number",
+        "outstanding": "number",
+        "repayment_progress": "number",
+        "utilisation": "number",
+        "health_label": "string"
+      }
+    ],
+    "savings_rate": "number",
+    "debt_to_income": "number",
+    "spending_breakdown": [
+      {
+        "category": "string",
+        "amount": "number",
+        "percentage": "number"
+      }
+    ],
+    "message": "string"
+  },
+  "example_response": {
+    "net_worth": {
+      "total": 0,
+      "investments": 0,
+      "assets": 0,
+      "liabilities": 0,
+      "composition": [
+        {
+          "category": "sample string",
+          "value": 0,
+          "percentage": 0
+        }
+      ]
+    },
+    "investment_performance": [
+      {
+        "display_name": "sample string",
+        "identifier": "sample string",
+        "type": "sample string",
+        "units": 0,
+        "cost_basis": 0,
+        "current_value": 0,
+        "gain_loss_percent": 0
+      }
+    ],
+    "liability_breakdown": [
+      {
+        "name": "sample string",
+        "type": "sample string",
+        "original_amount": 0,
+        "outstanding": 0,
+        "repayment_progress": 0,
+        "utilisation": 0,
+        "health_label": "sample string"
+      }
+    ],
+    "savings_rate": 0,
+    "debt_to_income": 0,
+    "spending_breakdown": [
+      {
+        "category": "sample string",
+        "amount": 0,
+        "percentage": 0
+      }
+    ],
+    "message": "sample string"
+  }
+}

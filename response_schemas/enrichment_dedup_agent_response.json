@@ -1,0 +1,44 @@
+{
+  "agent_name": "Enrichment & Dedup Agent",
+  "agent_id": "69ec55805e51596669c0ed08",
+  "description": "Reads pre-resolved identifiers from Notion: ticker_symbol for stocks, scheme_code for MFs, weight_grams + purity for gold. For CSV rows flagged identifier_unresolved, attempts LLM-based resolution from remarks. Applies WDV depreciation. Recalculates loan balances. Computes credit utilisation. Runs dedup.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "status": "string",
+    "enrichment_summary": {
+      "stocks_enriched": "number",
+      "mfs_enriched": "number",
+      "gold_enriched": "number",
+      "identifiers_resolved": "number",
+      "depreciation_applied": "number",
+      "loans_recalculated": "number",
+      "credit_utilisation_computed": "number"
+    },
+    "dedup_summary": {
+      "duplicates_found": "number",
+      "auto_merged": "number",
+      "flagged_for_review": "number"
+    },
+    "message": "string"
+  },
+  "example_response": {
+    "status": "sample string",
+    "enrichment_summary": {
+      "stocks_enriched": 0,
+      "mfs_enriched": 0,
+      "gold_enriched": 0,
+      "identifiers_resolved": 0,
+      "depreciation_applied": 0,
+      "loans_recalculated": 0,
+      "credit_utilisation_computed": 0
+    },
+    "dedup_summary": {
+      "duplicates_found": 0,
+      "auto_merged": 0,
+      "flagged_for_review": 0
+    },
+    "message": "sample string"
+  }
+}

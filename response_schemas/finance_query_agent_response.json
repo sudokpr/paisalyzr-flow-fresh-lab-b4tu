@@ -1,0 +1,14 @@
+{
+  "agent_name": "Finance Query Agent",
+  "agent_id": "69ec5581dcdea9592ddcd90f",
+  "description": "Answers user queries about financial data in plain conversational English.",
+  "agent_type": "text",
+  "accessor": "text",
+  "auto_generated": true,
+  "response_schema": {
+    "response": "string"
+  },
+  "example_response": {
+    "response": "Here's your financial snapshot for this month! Your total income is Rs 1.93L from salary credits..."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "agent_name": "CSV Ingest Agent",
+  "agent_id": "69ec557ff83595833f6326ff",
+  "description": "Accepts CSV rows (max 500) with column mapping. Classifies each row. Investment rows store raw name and are flagged as identifier_unresolved for the Enrichment agent to attempt best-match resolution. Bulk-inserts with source_type.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "status": "string",
+    "total_rows": "number",
+    "processed_rows": "number",
+    "type_breakdown": {
+      "income": "number",
+      "expense": "number",
+      "investment": "number",
+      "asset": "number",
+      "liability": "number",
+      "emi": "number"
+    },
+    "unresolved_investments": "number",
+    "errors": [
+      "string"
+    ],
+    "message": "string"
+  },
+  "example_response": {
+    "status": "processing status",
+    "total_rows": 0,
+    "processed_rows": 0,
+    "type_breakdown": {
+      "income": 0,
+      "expense": 0,
+      "investment": 0,
+      "asset": 0,
+      "liability": 0,
+      "emi": 0
+    },
+    "unresolved_investments": 0,
+    "errors": [
+      "sample string"
+    ],
+    "message": "sample string"
+  }
+}

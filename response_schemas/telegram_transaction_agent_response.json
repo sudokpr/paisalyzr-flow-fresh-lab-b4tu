@@ -1,0 +1,58 @@
+{
+  "agent_name": "Telegram Transaction Agent",
+  "agent_id": "69ec557e5e51596669c0ed04",
+  "description": "Handles 4 message types: (1) Investment with inline resolution \u2014 uses LLM to resolve common names to ticker symbols (stocks) or AMFI scheme codes (MFs), handles ambiguity by asking user to clarify, defaults MFs to Direct Growth, confirms resolved identifier before storing. Stores display_name + ticker_symbol/scheme_code + units + price. For gold: captures weight_grams, purity (confirms 22K default for jewellery), making_charges. (2) Liability Setup \u2014 captures all required fields. (3) Transaction Logging \u2014 6 types, shorthand parsing. EMI auto-split using stored loan data; prompts for setup if missing. (4) Updates \u2014 CC outstanding/limit, asset values.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "transaction_type": "string",
+    "status": "string",
+    "message": "string",
+    "transaction_details": {
+      "description": "string",
+      "amount": "number",
+      "category": "string",
+      "date": "string",
+      "display_name": "string",
+      "ticker_symbol": "string",
+      "scheme_code": "string",
+      "units": "number",
+      "buy_price": "number",
+      "weight_grams": "number",
+      "purity": "string",
+      "making_charges": "number",
+      "interest_component": "number",
+      "principal_component": "number",
+      "credit_utilisation": "number"
+    },
+    "clarification_options": [
+      "string"
+    ]
+  },
+  "example_response": {
+    "transaction_type": "Type: income, expense, investment, asset, liability, emi, setup, update",
+    "status": "Status: confirmed, pending_confirmation, needs_clarification, error",
+    "message": "Response message to user",
+    "transaction_details": {
+      "description": "sample string",
+      "amount": 0,
+      "category": "sample string",
+      "date": "sample string",
+      "display_name": "sample string",
+      "ticker_symbol": "sample string",
+      "scheme_code": "sample string",
+      "units": 0,
+      "buy_price": 0,
+      "weight_grams": 0,
+      "purity": "sample string",
+      "making_charges": 0,
+      "interest_component": 0,
+      "principal_component": 0,
+      "credit_utilisation": 0
+    },
+    "clarification_options": [
+      "sample string"
+    ]
+  }
+}
